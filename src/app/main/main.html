@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>User Management</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-8 add-user-btn">
+      <button class="btn btn-default" ui-sref="new-user"><i class="fa fa-plus"></i> Add User</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="row table-header">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">First Name</div>
+        <div class="col-md-4">Last Name</div>
+        <div class="col-md-4">Account Types</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 table-row" ng-repeat="user in vm.users">
+      <div class="row" ng-click="user.collapsed = !user.collapsed">
+        <div class="col-md-1">
+          <i class="fa fa-plus" ng-if="user.collapsed"></i>
+          <i class="fa fa-minus" ng-if="!user.collapsed"></i>
+        </div>
+        <div class="col-md-3 first-name">{{user.first_name}}</div>
+        <div class="col-md-4 last-name">{{user.last_name}}</div>
+        <div class="col-md-4 account-types">
+          <span ng-if="user.collapsed">{{user.account_types.length}}</span>
+          <span class="capitalize" ng-if="!user.collapsed && user.account_types.length" ng-repeat="type in user.account_types">{{type.name}}<span ng-if="$index !== user.account_types.length - 1">, </span></span>
+          <span ng-if="!user.collapsed && user.account_types.length == 0">None</span>
+        </div>
+      </div>
+      <div class="row collapsed-row" uib-collapse="user.collapsed">
+        <div class="col-md-12">
+          <div class="btn btn-default view-details-btn" ui-sref="user-details({userId: user.id})">Edit/View Details</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

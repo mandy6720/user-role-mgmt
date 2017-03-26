@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Create New User</h1>
+    </div>
+  </div>
+  <div class="row user-info">
+  	<div class="col-md-12">
+      <input id="first_name" ng-model="vm.newUser.first_name" placeholder="First Name" type="text" class="form-control" /><br/>
+      <input id="last_name" ng-model="vm.newUser.last_name" placeholder="Last Name" type="text" class="form-control" />
+  	</div>
+    <div class="account-types-checkboxes">
+      <h4>Account Types:</h4>
+      <div ng-repeat="type in vm.account_types" class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="type.selected"> {{type.name}}
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row user-buttons">
+  	<div class="col-md-10 col-md-offset-1">
+  		<div class="btn btn-default" ng-click="vm.addUser()">Add User</div>
+      <div class="btn btn-default" ui-sref="users">Cancel</div>
+  	</div>
+  </div>
+</div>

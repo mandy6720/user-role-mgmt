@@ -1,0 +1,36 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+      <div class="btn btn-default" ui-sref="accounts">Back to Accounts</div>
+    </div>
+	</div>
+  <div class="row">
+    <div class="col-md-12 capitalize">
+      <h1>{{vm.selectedAccount.name}}</h1>
+    </div>
+  </div>
+  <div class="row user-accounts">
+  	<div class="col-md-10 col-md-offset-1">
+  		<h3>Users: </h3>
+  	</div>
+  	<div class="col-md-10 col-md-offset-1" ng-if="vm.user.account_types.length < 1">None</div>
+  	<div class="col-md-10 col-md-offset-1 account-type-user-list" ng-repeat="user in vm.selectedAccount.users" ng-show="!vm.editAccountUsers">
+  		{{user.first_name}} {{user.last_name}}
+  	</div>
+  	<div class="col-md-2 col-md-offset-5 user-account-checkboxes" ng-show="vm.editAccountUsers">
+	  	<div ng-repeat="user in vm.users track by user.id" class="checkbox">
+	      <label>
+	        <input type="checkbox" ng-model="user.selected"> {{user.first_name}} {{user.last_name}}
+	      </label>
+	    </div>
+	  </div>
+  </div>
+  <div class="row user-buttons">
+  	<div class="col-md-10 col-md-offset-1">
+  		<div class="btn btn-default" ng-click="vm.toggleEditUsers(vm.selectedAccount)" ng-show="!vm.editAccountUsers">Add/Remove Users</div><br ng-show="!vm.editAccountUsers"/>
+  		<div class="btn btn-default" ng-click="vm.saveUsers()" ng-show="vm.editAccountUsers">Save</div>
+  		<div class="btn btn-default" ng-click="vm.openModal('sm', vm.selectedAccount)" ng-show="!vm.editAccountUsers">Delete Account Type</div>
+  		<div class="btn btn-default" ng-click="vm.editAccountUsers = false" ng-show="vm.editAccountUsers">Cancel</div>
+  	</div>
+  </div>
+</div>

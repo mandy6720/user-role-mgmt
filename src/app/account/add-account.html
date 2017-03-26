@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <br />
+      <h1>Create New Account Type</h1>
+    </div>
+  </div>
+  <div class="row user-info">
+  	<div class="col-md-12">
+      <input id="account_type" ng-model="vm.account_name" placeholder="Account Type Name" type="text" class="form-control" /><br/>
+  	</div>
+  </div>
+  <div class="row user-buttons">
+  	<div class="col-md-10 col-md-offset-1">
+  		<div class="btn btn-default" ng-click="vm.createAccount(vm.account_name)">Add Account Type</div>
+      <div class="btn btn-default" ui-sref="accounts">Cancel</div>
+  	</div>
+  </div>
+</div>

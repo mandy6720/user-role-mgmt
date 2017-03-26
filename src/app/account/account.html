@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Account Management</h1>
+    </div>
+    <div class="col-md-12 account-add-btn">
+      <div class="btn btn-default" ui-sref="new-account"><i class="fa fa-plus"></i> Add Account Type</div>
+    </div>
+  </div>
+  <div class="row">
+  	<div class="col-md-3 col-md-offset-3 capitalize">
+  		<h3>Account Types</h3>
+  		<div class="account-container" ng-repeat="account in vm.accountTypes">
+  			<div class="account-header" ng-click="account.collapsed = !account.collapsed">
+          <h4><span ng-if="account.collapsed"><i class="fa fa-plus"></i></span><span ng-if="!account.collapsed"><i class="fa fa-minus"></i></span> {{account.name}} ({{account.users.length}})</h4>
+        </div>
+  			<div class="account-body" uib-collapse="account.collapsed">
+          <span class="user-name" ng-repeat="user in account.users" ui-sref="user-details({userId: user.id})">{{user.first_name}} {{user.last_name}}<br /></span>
+          <span ng-if="!account.users.length">None<br /></span>
+          <div class="btn btn-default" ui-sref="account-details({accountId:account.id})">Edit/View Details</div>
+        </div>
+  		</div>
+  	</div>
+  	<div class="col-md-3">
+      <div class="chart-container">
+        <canvas ng-if="vm.showChart" id="doughnut" class="chart-doughnut" chart-data="vm.accountData" chart-labels="vm.accountLabels"></canvas> <!-- chart-colours="vm.colors" -->
+      </div>
+  	</div>
+  </div>
+</div>

@@ -1,0 +1,220 @@
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+/*----------------------------------------
+[Table of Contents]
+
+  1. Variables
+  2. Bootstrap overrides
+  3. Global
+  4. Main
+----------------------------------------*/
+
+/*----------------------------------------
+  1. Variables
+----------------------------------------*/
+
+$brand-540: #222;
+$black: #000;
+$grey: #ccc;
+$white: #fff;
+
+/*----------------------------------------
+  2. Bootstrap overrides
+----------------------------------------*/
+
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+/*----------------------------------------
+  3. Global
+----------------------------------------*/
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: $grey;
+  color: $black;
+  padding: 0.2em 0;
+}
+
+/*----------------------------------------
+  4. Main
+----------------------------------------*/
+
+header {
+  color: $brand-540;
+  height: 100%;
+  padding: 10px 0;
+  text-align: center;
+  h1 {
+    display: block;
+    font-size: 2.75em;
+    font-weight: 500;
+  }
+  #logo {
+    margin-bottom: 50px;
+    font-size: 15em;
+  }
+}
+
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 4.75em;
+  }
+}
+
+/*----------------------------------------
+  5. My Styles
+----------------------------------------*/
+
+body {
+  background-color: #194264;
+  background-image: -webkit-linear-gradient(top, #194264, #54C9EB); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image:    -moz-linear-gradient(top, #194264, #54C9EB); /* For Firefox (3.6 to 15) */
+  background-image:      -o-linear-gradient(top, #194264, #54C9EB); /* For old Opera (11.1 to 12.0) */ 
+  background-image: linear-gradient(to top, #194264, #54C9EB);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  color: #e7e7e7;
+  h1, h2,h3, span {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    text-align: center;
+  }
+}
+.capitalize {
+  text-transform: capitalize;
+}
+div:focus, div:active, div:visited {
+  outline: none;
+}
+.navbar {
+  background-color: rgba(231, 231, 231, 1) !important;
+  .navbar-logo-img {
+    width: 150px;
+    margin-top: -5px;
+  }
+}
+.btn-default {
+  color: #e7e7e7;
+  background-color: transparent;
+  &:hover {
+    color: #e7e7e7;
+    background-color: #194264;
+  }
+}
+.table-header {
+  background-color: rgba(231, 231, 231, .7);
+  color: #222;
+  padding: 5px;
+  text-align: center;
+  border-radius: 7px;
+}
+.table-row {
+  padding: 5px;
+  text-align: center;
+  border-bottom: 1px solid #e7e7e7;
+}
+.bottomborder{
+  border-bottom: 1px solid #e7e7e7;
+  text-align: center;
+}
+.view-details-btn {
+  margin: 10px;
+}
+.add-user-btn {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.modal-container {
+  text-align: center;
+  padding: 8px;
+  color: #222;
+  .btn {
+    margin-bottom: 5px;
+  }
+}
+.user-accounts,
+.user-buttons {
+  text-align: center;
+  margin-bottom: 8px;
+  .account-type-list {
+    text-transform: capitalize;
+  }
+}
+.user-buttons {
+  margin-top: 25px;
+  .btn {
+    margin-bottom: 5px;
+  }
+}
+.user-info {
+  text-align: center;
+  .form-control {
+    width: 250px;
+    display: inline-block;
+    margin-bottom: 8px;
+    &:first-of-type {
+      margin-top: 8px;
+    }
+  }
+  .account-types-checkboxes {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+    text-transform: capitalize;
+    label {
+      margin-left: 10px;
+    }
+  }
+}
+.user-account-checkboxes {
+  text-align: left;
+  padding-left: 30px;
+  text-transform: capitalize;
+}
+.account-container {
+  text-align: center;
+}
+.chart-container {
+  height: 300px;
+  margin-top: 20px;
+}
+.account-container {
+  border-bottom: 1px solid #e7e7e7;
+  &:first-of-type {
+    border-top: 1px solid #e7e7e7;
+  }
+  i {
+    float: left;
+  }
+  .account-body {
+    padding-bottom: 5px;
+    .user-name {
+      cursor: pointer;
+    }
+    .btn {
+      margin: 5px auto 10px;
+    }
+  }
+}
+.account-add-btn {
+  text-align: center;
+}
+.account-type-user-list {
+  margin-bottom: 5px;
+}
+
+
+
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
